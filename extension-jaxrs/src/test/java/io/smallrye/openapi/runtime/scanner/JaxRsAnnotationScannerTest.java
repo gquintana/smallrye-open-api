@@ -181,6 +181,8 @@ class JaxRsAnnotationScannerTest extends JaxRsDataObjectScannerTestBase {
         Indexer indexer = new Indexer();
         index(indexer, "test/io/smallrye/openapi/runtime/scanner/resources/javax/TagTestResource1.class");
         index(indexer, "test/io/smallrye/openapi/runtime/scanner/resources/javax/TagTestResource2.class");
+        index(indexer, "test/io/smallrye/openapi/runtime/scanner/resources/javax/TagChildTestResource.class");
+        index(indexer, "test/io/smallrye/openapi/runtime/scanner/resources/javax/TagParentTestResource.class");
 
         testTagScanning(indexer.complete());
     }
@@ -191,6 +193,8 @@ class JaxRsAnnotationScannerTest extends JaxRsDataObjectScannerTestBase {
         Indexer indexer = new Indexer();
         index(indexer, "test/io/smallrye/openapi/runtime/scanner/resources/jakarta/TagTestResource1.class");
         index(indexer, "test/io/smallrye/openapi/runtime/scanner/resources/jakarta/TagTestResource2.class");
+        index(indexer, "test/io/smallrye/openapi/runtime/scanner/resources/jakarta/TagChildTestResource.class");
+        index(indexer, "test/io/smallrye/openapi/runtime/scanner/resources/jakarta/TagParentTestResource.class");
 
         testTagScanning(indexer.complete());
     }

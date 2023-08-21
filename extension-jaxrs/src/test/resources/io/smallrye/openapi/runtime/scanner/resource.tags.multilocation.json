@@ -7,10 +7,50 @@
     "name" : "tag3",
     "description" : "TAG3 from TagTestResource2#getValue1",
     "externalDocs" : {
-      "description" : "Ext doc from TagTestResource2#getValue1"
+      "description": "Ext doc from TagTestResource2#getValue1"
     }
+  }, {
+    "name" : "tag-parent-child1",
+    "description" : "Child 1 from TagParentTestResource"
+  }, {
+    "name" : "tag-parent-child2",
+    "description" : "Child 2 from TagParentTestResource"
   } ],
   "paths" : {
+    "/tagparent/child1" : {
+      "get" : {
+        "tags" : [ "tag-parent-child1" ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tagparent/child2" : {
+      "tags" : [ "tag-parent-child2" ],
+      "get" : {
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/tags1" : {
       "get" : {
         "tags" : [ "tag3" ],
